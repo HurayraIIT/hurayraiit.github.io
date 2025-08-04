@@ -148,24 +148,116 @@
             margin: 20px 0;
         }
         
-        .payment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        .payment-section {
+            background-color: #1f2937;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-header {
+            display: flex;
+            align-items: center;
             gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-logo {
+            height: 30px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+        }
+        
+        .payment-title h4 {
+            color: #f0f6fc;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .payment-subtitle {
+            color: #7d8590;
+            font-size: 0.9rem;
+            margin: 5px 0 0 0;
+        }
+        
+        .payment-details {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .payment-info {
+            flex: 1;
+        }
+        
+        .phone-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #58a6ff;
+            margin-bottom: 8px;
+            font-family: monospace;
+        }
+        
+        .payment-instruction {
+            color: #c9d1d9;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .qr-section {
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #30363d;
+        }
+        
+        .qr-label {
+            font-size: 0.8rem;
+            color: #7d8590;
+            margin: 8px 0 0 0;
+        }
+        
+        .bank-details {
             margin-top: 15px;
         }
         
-        .payment-method {
-            background-color: #1f2937;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
+        .bank-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
         }
         
-        .payment-method strong {
-            color: #58a6ff;
-            display: block;
-            margin-bottom: 5px;
+        .bank-field {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background-color: #161b22;
+            border-radius: 4px;
+            border: 1px solid #30363d;
+        }
+        
+        .field-label {
+            color: #7d8590;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .field-value {
+            color: #e6edf3;
+            font-weight: 600;
+            font-family: monospace;
+            text-align: right;
         }
         
         .highlight {
@@ -324,6 +416,40 @@
             th, td {
                 padding: 6px 8px;
             }
+            
+            .payment-details {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .qr-section {
+                text-align: center;
+                order: -1;
+            }
+            
+            .payment-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .payment-logo {
+                height: 35px;
+            }
+            
+            .bank-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .bank-field {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+            
+            .field-value {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -389,22 +515,124 @@
                 
                 <div class="payment-methods">
                     <h3>Payment Methods</h3>
-                    <div class="payment-grid">
-                        <div class="payment-method">
-                            <strong>bKash Personal</strong>
-                            01558987890
+                    
+                    <!-- bKash Section -->
+                    <div class="payment-section">
+                        <div class="payment-header">
+                            <img src="https://hurayraiit.com/wp-content/uploads/2025/05/bkash.png" alt="bKash" class="payment-logo">
+                            <div class="payment-title">
+                                <h4>bKash Personal</h4>
+                                <p class="payment-subtitle">পার্সোনাল বিকাশ নাম্বারঃ</p>
+                            </div>
                         </div>
-                        <div class="payment-method">
-                            <strong>Rocket</strong>
-                            Available
+                        <div class="payment-details">
+                            <div class="payment-info">
+                                <div class="phone-number">01558987890</div>
+                                <p class="payment-instruction">Send Money</p>
+                            </div>
+                            <div class="qr-section">
+                                <img src="https://hurayraiit.com/wp-content/uploads/2025/05/bkash-qr-code-scaled.jpeg" alt="bKash QR Code" class="qr-code">
+                                <p class="qr-label">Scan QR Code</p>
+                            </div>
                         </div>
-                        <div class="payment-method">
-                            <strong>Bank (SCB)</strong>
-                            Standard Chartered
+                    </div>
+                    
+                    <!-- Rocket Section -->
+                    <div class="payment-section">
+                        <div class="payment-header">
+                            <img src="https://hurayraiit.com/wp-content/uploads/2025/05/rocket.png" alt="Rocket" class="payment-logo">
+                            <div class="payment-title">
+                                <h4>Rocket</h4>
+                                <p class="payment-subtitle">পার্সোনাল রকেট নাম্বারঃ</p>
+                            </div>
                         </div>
-                        <div class="payment-method">
-                            <strong>Bank (NRBC)</strong>
-                            NRB Commercial Bank
+                        <div class="payment-details">
+                            <div class="payment-info">
+                                <div class="phone-number">01558987890</div>
+                                <p class="payment-instruction">Send Money</p>
+                            </div>
+                            <div class="qr-section">
+                                <img src="https://hurayraiit.com/wp-content/uploads/2025/05/rocket-qr.jpeg" alt="Rocket QR Code" class="qr-code">
+                                <p class="qr-label">Scan QR Code</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SCB Bank Section -->
+                    <div class="payment-section">
+                        <div class="payment-header">
+                            <img src="https://hurayraiit.com/wp-content/uploads/2025/05/scb.png" alt="Standard Chartered Bank" class="payment-logo">
+                            <div class="payment-title">
+                                <h4>Standard Chartered Bank</h4>
+                                <p class="payment-subtitle">Bank Transfer Details</p>
+                            </div>
+                        </div>
+                        <div class="bank-details">
+                            <div class="bank-info-grid">
+                                <div class="bank-field">
+                                    <span class="field-label">Account Holder:</span>
+                                    <span class="field-value">ABU HURAYRA</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">Account Number:</span>
+                                    <span class="field-value">18000603301</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">Branch:</span>
+                                    <span class="field-value">Gulshan North</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">Routing Number:</span>
+                                    <span class="field-value">215261900</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">SWIFT Code:</span>
+                                    <span class="field-value">SCBLBDDX</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">Phone:</span>
+                                    <span class="field-value">01558987890</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NRBC Bank Section -->
+                    <div class="payment-section">
+                        <div class="payment-header">
+                            <img src="https://hurayraiit.com/wp-content/uploads/2025/05/nrbc-bank-main-logo.png" alt="NRB Commercial Bank" class="payment-logo">
+                            <div class="payment-title">
+                                <h4>NRB Commercial Bank PLC</h4>
+                                <p class="payment-subtitle">Bank Transfer Details</p>
+                            </div>
+                        </div>
+                        <div class="bank-details">
+                            <div class="bank-info-grid">
+                                <div class="bank-field">
+                                    <span class="field-label">Account Holder:</span>
+                                    <span class="field-value">MS. MORIOM NASA</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">Account Number:</span>
+                                    <span class="field-value">301331100032369</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">Branch:</span>
+                                    <span class="field-value">FASHITALA SUB BRANCH</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">Branch Code:</span>
+                                    <span class="field-value">SL-204917</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">Location:</span>
+                                    <span class="field-value">Gaibandha, Sundarganj</span>
+                                </div>
+                                <div class="bank-field">
+                                    <span class="field-label">Email:</span>
+                                    <span class="field-value">hurayraiit@gmail.com</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -414,15 +642,15 @@
                 <h2>Recent Donations</h2>
                 <div class="donations-summary">
                     <div class="summary-item">
-                        <span class="summary-number">৳11,500</span>
+                        <span class="summary-number">৳500</span>
                         <div>Current Total</div>
                     </div>
                     <div class="summary-item">
-                        <span class="summary-number">৳11,000</span>
-                        <div>Deposited</div>
+                        <span class="summary-number">53</span>
+                        <div>Total Donations</div>
                     </div>
                     <div class="summary-item">
-                        <span class="summary-number">৳157,300</span>
+                        <span class="summary-number">৳168,800</span>
                         <div>Total in Fund</div>
                     </div>
                 </div>
@@ -440,50 +668,320 @@
                         <tr>
                             <td>08-07-2025</td>
                             <td>bKash</td>
-                            <td>K*****</td>
+                            <td>K***** (017******81)</td>
                             <td class="amount">৳500</td>
                         </tr>
                         <tr>
                             <td>18-05-2025</td>
                             <td>Bank</td>
-                            <td>M******</td>
+                            <td>M****** (XXXXXXX6401)</td>
                             <td class="amount">৳500</td>
                         </tr>
                         <tr>
                             <td>05-05-2025</td>
                             <td>bKash</td>
-                            <td>K*****</td>
-                            <td class="amount">৳1,500</td>
+                            <td>K***** (01756****81)</td>
+                            <td class="amount">৳1500</td>
                         </tr>
                         <tr>
                             <td>25-04-2025</td>
                             <td>Bank</td>
-                            <td>M******</td>
+                            <td>M****** (XXXXXXX6401)</td>
                             <td class="amount">৳500</td>
                         </tr>
                         <tr>
                             <td>05-04-2025</td>
-                            <td>bKash</td>
-                            <td>K*****</td>
-                            <td class="amount">৳1,000</td>
+                            <td>Cash</td>
+                            <td>K***** (01902****81)</td>
+                            <td class="amount">৳50</td>
                         </tr>
                         <tr>
                             <td>05-04-2025</td>
-                            <td>Cash</td>
-                            <td>K*****</td>
-                            <td class="amount">৳50</td>
+                            <td>bKash</td>
+                            <td>K***** (01756****81)</td>
+                            <td class="amount">৳1000</td>
                         </tr>
                         <tr>
                             <td>30-03-2025</td>
                             <td>bKash</td>
-                            <td>****</td>
+                            <td>**** (01738****85)</td>
                             <td class="amount">৳50</td>
+                        </tr>
+                        <tr>
+                            <td>29-03-2025</td>
+                            <td>bKash</td>
+                            <td>**** (01845****94)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>28-03-2025</td>
+                            <td>bKash</td>
+                            <td>K***** (01756****81)</td>
+                            <td class="amount">৳500</td>
                         </tr>
                         <tr>
                             <td>24-03-2025</td>
                             <td>bKash</td>
-                            <td>Bela Begum</td>
-                            <td class="amount">৳5,100</td>
+                            <td>Bela Begum (01875****06)</td>
+                            <td class="amount">৳5100</td>
+                        </tr>
+                        <tr>
+                            <td>23-03-2025</td>
+                            <td>bKash</td>
+                            <td>K***** (01756****81)</td>
+                            <td class="amount">৳300</td>
+                        </tr>
+                        <tr>
+                            <td>19-03-2025</td>
+                            <td>bKash</td>
+                            <td>I** (0170****734)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>18-03-2025</td>
+                            <td>SCB</td>
+                            <td>R****** (280XXXX001)</td>
+                            <td class="amount">৳1500</td>
+                        </tr>
+                        <tr>
+                            <td>18-03-2025</td>
+                            <td>SCB</td>
+                            <td>J*** (XXXXXXX5301)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>18-03-2025</td>
+                            <td>bKash</td>
+                            <td>A***** (0168*****66)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>18-03-2025</td>
+                            <td>Cash</td>
+                            <td>K***** (****)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>11-03-2025</td>
+                            <td>bKash</td>
+                            <td>K***** (017*****555)</td>
+                            <td class="amount">৳15300</td>
+                        </tr>
+                        <tr>
+                            <td>02-03-2025</td>
+                            <td>bKash</td>
+                            <td>J***** (0172****303)</td>
+                            <td class="amount">৳1500</td>
+                        </tr>
+                        <tr>
+                            <td>12-02-2025</td>
+                            <td>Bank SCB</td>
+                            <td>M******** (XXXXXXX5001)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>10-02-2025</td>
+                            <td>bKash</td>
+                            <td>J***** (0172****303)</td>
+                            <td class="amount">৳5000</td>
+                        </tr>
+                        <tr>
+                            <td>08-02-2025</td>
+                            <td>Bank NRBC</td>
+                            <td>M**** (***)</td>
+                            <td class="amount">৳10000</td>
+                        </tr>
+                        <tr>
+                            <td>07-02-2025</td>
+                            <td>Bank SCB (iBanking)</td>
+                            <td>R***** (***)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>05-02-2025</td>
+                            <td>Bank SCB</td>
+                            <td>S***** (***)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>05-02-2025</td>
+                            <td>Check</td>
+                            <td>Startise (****)</td>
+                            <td class="amount">৳40000</td>
+                        </tr>
+                        <tr>
+                            <td>05-02-2025</td>
+                            <td>Cash</td>
+                            <td>R****** (****)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>05-02-2025</td>
+                            <td>Cash</td>
+                            <td>S******* (****)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>05-02-2025</td>
+                            <td>Cash</td>
+                            <td>J****** (****)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>05-02-2025</td>
+                            <td>Cash</td>
+                            <td>R***** (****)</td>
+                            <td class="amount">৳2000</td>
+                        </tr>
+                        <tr>
+                            <td>05-02-2025</td>
+                            <td>Bank(SCB)</td>
+                            <td>F***** (****)</td>
+                            <td class="amount">৳3000</td>
+                        </tr>
+                        <tr>
+                            <td>05-02-2025</td>
+                            <td>bKash</td>
+                            <td>J***** (017******03)</td>
+                            <td class="amount">৳5000</td>
+                        </tr>
+                        <tr>
+                            <td>04-02-2025</td>
+                            <td>Bank(SCB)</td>
+                            <td>S****** (****)</td>
+                            <td class="amount">৳10000</td>
+                        </tr>
+                        <tr>
+                            <td>04-02-2025</td>
+                            <td>Bank(SCB)</td>
+                            <td>O***** (****)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>04-02-2025</td>
+                            <td>Bank(SCB)</td>
+                            <td>***** (****)</td>
+                            <td class="amount">৳1500</td>
+                        </tr>
+                        <tr>
+                            <td>04-02-2025</td>
+                            <td>bKash</td>
+                            <td>R**** (019******11)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>04-02-2025</td>
+                            <td>Bank(SCB)</td>
+                            <td>M**** (****)</td>
+                            <td class="amount">৳5000</td>
+                        </tr>
+                        <tr>
+                            <td>03-02-2025</td>
+                            <td>bKash</td>
+                            <td>F**** (017******81)</td>
+                            <td class="amount">৳2235</td>
+                        </tr>
+                        <tr>
+                            <td>02-02-2025</td>
+                            <td>bKash</td>
+                            <td>K****** (018******06)</td>
+                            <td class="amount">৳2040</td>
+                        </tr>
+                        <tr>
+                            <td>02-02-2025</td>
+                            <td>bKash</td>
+                            <td>B***** (017******21)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>02-02-2025</td>
+                            <td>bKash</td>
+                            <td>R***** (019******66)</td>
+                            <td class="amount">৳1025</td>
+                        </tr>
+                        <tr>
+                            <td>01-02-2025</td>
+                            <td>bKash</td>
+                            <td>S******* (016******81)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>30-01-2025</td>
+                            <td>Bank</td>
+                            <td>T****** (****)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>29-01-2025</td>
+                            <td>bKash</td>
+                            <td>F**** (017******55)</td>
+                            <td class="amount">৳10000</td>
+                        </tr>
+                        <tr>
+                            <td>29-01-2025</td>
+                            <td>Bank</td>
+                            <td>N**** (18*******01)</td>
+                            <td class="amount">৳15000</td>
+                        </tr>
+                        <tr>
+                            <td>29-01-2025</td>
+                            <td>Bank</td>
+                            <td>L***** (18*******01)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>29-01-2025</td>
+                            <td>Nagad</td>
+                            <td>F***** (016******26)</td>
+                            <td class="amount">৳300</td>
+                        </tr>
+                        <tr>
+                            <td>29-01-2025</td>
+                            <td>Cash</td>
+                            <td>S**** (016******85)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>29-01-2025</td>
+                            <td>bKash</td>
+                            <td>N**** (017******99)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>29-01-2025</td>
+                            <td>bKash</td>
+                            <td>K***** (017******81)</td>
+                            <td class="amount">৳1000</td>
+                        </tr>
+                        <tr>
+                            <td>29-01-2025</td>
+                            <td>Bank</td>
+                            <td>M****** (18*******01)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>23-01-2025</td>
+                            <td>bKash</td>
+                            <td>A*** (019******81)</td>
+                            <td class="amount">৳200</td>
+                        </tr>
+                        <tr>
+                            <td>23-01-2025</td>
+                            <td>Rocket</td>
+                            <td>H*** (016*****4691)</td>
+                            <td class="amount">৳500</td>
+                        </tr>
+                        <tr>
+                            <td>23-01-2025</td>
+                            <td>bKash</td>
+                            <td>A*** (017*****415)</td>
+                            <td class="amount">৳200</td>
+                        </tr>
+                        <tr>
+                            <td>23-01-2025</td>
+                            <td>Bank</td>
+                            <td>S*** (***))</td>
+                            <td class="amount">৳11500</td>
                         </tr>
                     </tbody>
                 </table>
@@ -499,6 +997,12 @@
                 <div class="update-card">
                     <div class="update-date">March 18, 2025</div>
                     <p><strong>Alhamdulillah!</strong> The beam construction work has started for the masjid.</p>
+                    <p><strong>আলহামদুলিল্লাহ!</strong> মসজিদের বিম তৈরির কাজ শুরু হয়েছে। </p>
+                    <!-- add this video: https://pub-8652c8e95ad6452c85f9643f88d7f8af.r2.dev/mashjid-images/masjid-update-20250318.mp4-->
+                     <video controls style="height:500px; width: 100%; border-radius: 6px; margin-top: 10px;">
+                        <source src="https://pub-8652c8e95ad6452c85f9643f88d7f8af.r2.dev/mashjid-images/masjid-update-20250318.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 
                 <div class="update-card">
@@ -533,10 +1037,10 @@
             <section class="contact-info">
                 <h2>Contact Information</h2>
                 <p><strong>WhatsApp:</strong> 01558987890</p>
-                <p><strong>Email:</strong> abu@hurayraiit.com</p>
+                <p><strong>Email:</strong> hurayraiit@gmail.com</p>
                 <div style="margin-top: 20px;">
                     <a href="https://wa.me/8801558987890" class="btn">WhatsApp</a>
-                    <a href="mailto:abu@hurayraiit.com" class="btn">Email</a>
+                    <a href="mailto:hurayraiit@gmail.com" class="btn">Email</a>
                 </div>
             </section>
             
